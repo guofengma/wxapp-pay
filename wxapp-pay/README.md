@@ -1,21 +1,17 @@
-# project
+### 扫码支付微信小程序
 
-> A Vue.js project
+        此项目类似我们日常去超市便利店买东西，付款时打开微信扫一扫去扫描二维码款
+    （哆啦宝、乐惠、美团、收钱吧）这种聚合支付的二维码，扫描后会出现店铺的信息还有支付金额界面；
+    
+### 功能介绍
+    1、扫描二维码调取接口获取商户信息进入收款台；
+    2、手动点击收款台金额，点击确定调取下单接口，成功后进行支付；
+    3、支付完成点击点击完成按钮。进入自定义支付完成页（可以展示些广告之类的）；
+    4、首页是纯展示页面没有功能。
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### 运用技术
+    微信小程序原生API；
+    ES6语法 箭头函数、Promise、Class继承、模板字符串、assign...等；
+    安全方面采用了配置秘钥+sha1加密=>token验证；(据说sha1 已经被人解开过，
+    小伙伴们也可以用sha256)
+    
