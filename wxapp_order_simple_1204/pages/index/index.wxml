@@ -1,0 +1,3 @@
+<image src="../../images/button.png" class="center" />
+
+<view class="font">请打开微信扫一扫，扫描商户门店码进行付款(仅是展示页面没做扫描处理)</view>
