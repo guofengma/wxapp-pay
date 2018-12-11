@@ -41,8 +41,12 @@ Page({
         let accessStore = new AccessStore(this);
         accessStore.bindEvents()
 
+        //支付组件
+        let payment = new Payment(this);
+        payment.bindEvents();
+
         console.log(JSON.stringify(machineNum))
-      
+
         if (machineNum != '' && machineNum != null && machineNum != undefined) {
             wx.getSystemInfo({//获取手机系统
                 success: res => {
@@ -65,10 +69,6 @@ Page({
                     scancode_time: scancode_time
 
                 })
-
-                //支付组件
-                let payment = new Payment(this);
-                payment.bindEvents();
             })
         } else {
             wx.showModal({
