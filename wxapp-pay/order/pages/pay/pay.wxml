@@ -1,0 +1,57 @@
+<view class="wrap">
+    <view class="header">
+        <view class='amount_box' data-display="false" capture-catch:tap="onKeyboardDispaly">
+            <text class="amount_txt">订单金额</text>
+            <text class="amount">
+                <text>¥ </text>
+            <text wx:if="{{ price !== null }}">{{ price }}</text>
+            <text wx:else class='blink'>1</text>
+            </text>
+        </view>
+    </view>
+
+
+    <view class="footer">
+        <view class='center support'>
+            <text class='support_bord'></text>
+            <text>由哆啦宝提供技术支持</text>
+            <text class='support_bord'></text>
+        </view>
+
+        <view class="keyboard" style='flex-direction:row' hidden='{{ keyboardHidden }}' capture-bind:tap="onKeyboard">
+            <form bindsubmit="pushFormSubmit" data-key="1" report-submit='true'>
+                <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:50px; width: 25%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+                <view class="keys" hover-class="keys_hove" data-key="1" hover-stay-time="100">1</view>
+            </form>
+            <view class="keys" hover-class="keys_hove" data-key="2" hover-stay-time="100">2</view>
+            <view class="keys" hover-class="keys_hove" data-key="3" hover-stay-time="100">3</view>
+            <view class="keys key_blank keys_rs" data-key="back" hover-class="keys_hove" hover-stay-time="100">
+                <image class="img_back" data-key="back" src='/images/back.png'></image>
+            </view>
+            <view class="keys" hover-class="keys_hove" data-key="4" hover-stay-time="100">4</view>
+            <view class="keys" hover-class="keys_hove" data-key="5" hover-stay-time="100">5</view>
+            <view class="keys" hover-class="keys_hove" data-key="6" hover-stay-time="100">6</view>
+            <view class="keys pay_btn_box keys_rs" data-key="paybtn">
+                <view class="pay_btn {{ payActive && 'on' }}" hover-class="pay_btn_hove" hover-stay-time="100" data-key="paybtn">
+                    <form bindsubmit="submitInfo" report-submit='true'>
+                        <button type="default" size="mini" class="formBtn" form-type="submit"></button>
+                    </form>
+                    <view class="pay_btn_txt" data-key="paybtn">确认</view>
+                    <view class="pay_btn_txt" data-key="paybtn">支付</view>
+                </view>
+                1
+            </view>
+            <view class="keys" hover-class="keys_hove" data-key="7" hover-stay-time="100">7</view>
+            <view class="keys" hover-class="keys_hove" data-key="8" hover-stay-time="100">8</view>
+            <view class="keys" hover-class="keys_hove" data-key="9" hover-stay-time="100">9</view>
+            <view class="keys key_blank keys_rs" data-key="">blank</view>
+            <view class="keys key_blank" hover-class="keys_hove" hover-stay-time="100" data-key="hide">
+                <image src='/images/keyboard.png' class="img_keyboard" data-key="hide"></image>
+            </view>
+            <view class="keys" hover-class="keys_hove" data-key="0" hover-stay-time="100">0</view>
+            <view class="keys" hover-class="keys_hove" data-key="." hover-stay-time="100">.</view>
+            <view class="keys key_blank keys_rs">blank</view>
+        </view>
+    </view>
+
+</view>
